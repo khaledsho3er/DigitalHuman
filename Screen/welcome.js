@@ -2,8 +2,9 @@ import { View, Text, Image } from 'react-native';
 import React from 'react';
 import { LinearGradient } from 'expo-linear-gradient';
 import COLORS from '../constants/colors';
+import Button from '../components/Button';
 
-const Welcome = () => {
+const Welcome = ({navigation}) => {
   return (
     <LinearGradient
       style={{ flex: 1 }}
@@ -14,13 +15,13 @@ const Welcome = () => {
           <Image
             source={require('../assets/bk.jpg')}
             style={{
-              height: 100,
-              width: 100,
+              height:150,
+              width: "100%",
               borderRadius: 20,
               position: 'absolute',
-              top: 10,
+              top: '50%',
+              left: '50%',
               transform: [
-                { rotate: '-15deg' },
                 { translateX: 20 },
                 { translateY: 50 },
               ],
@@ -55,9 +56,19 @@ const Welcome = () => {
             <View style={{marginVertical:22}}>
                 <Text style={{fontSize:16,color:COLORS.white,
                 marginVertical:4}}>
-                    Welcome to the world Digital Twin
+                    Welcome to the world of Digital Humans.
                 </Text>
-
+                    
+            </View>
+            <View>
+            <Button
+                        title="Join Now"
+                        onPress={() => navigation.navigate("Signup")}
+                        style={{
+                            marginTop: 22,
+                            width: "100%"
+                        }}
+                    />
             </View>
           </View>
         </View>
